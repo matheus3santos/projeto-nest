@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { QueixaModel } from './queixa.models'
 
 @Entity()
 export class UserModel {
@@ -20,4 +21,14 @@ export class UserModel {
 
   @Column('int')
   telefone: number;
+
+  @OneToMany(()=> QueixaModel, (queixa) => queixa.pessoa)
+  queixas: QueixaModel[];
+
+
+
+
+
 }
+
+

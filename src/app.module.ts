@@ -1,24 +1,25 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModel } from './models/user.models';
-import { PersonModule } from './modules/person.module';
-import { PersonModel } from './models/person.models'
 import { UserModule } from './modules/user.module';
+import { QueixaModel } from './models/queixa.models';
+import { QueixaModule } from './modules/queixa.module';
 
 
 
 @Module({
   imports: [
-    PersonModule,
+
     UserModule,
+    QueixaModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
       port: 3306,
       username: 'matheus',
-      password: '12345',
+      password: 'Estrel@16',
       database: 'projetoWeb',
-      entities: [ PersonModel, UserModel ],
+      entities: [ UserModel, QueixaModel ],
       synchronize: true,
     }),
   ],
