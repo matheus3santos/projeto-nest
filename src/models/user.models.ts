@@ -10,7 +10,7 @@ export class UserModel {
   @Column()
   name: string;
 
-  @Column({ type: 'date'})
+  @Column()
   data: string;
 
   @Column()

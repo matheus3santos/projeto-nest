@@ -3,7 +3,7 @@
 export class UserSchema {
 
     name: string;
-    data: string;
+    date: string;
     email: string;
     adress: string;
     telefone: number;
