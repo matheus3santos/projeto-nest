@@ -20,7 +20,7 @@ import { QueixaModule } from './modules/queixa.module';
       password: 'ifpe2023',
       database: 'projetoWeb',
       entities: [ UserModel, QueixaModel ],
-      synchronize: false,
+      synchronize: true,
     }),
   ],
   controllers: [],

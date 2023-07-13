@@ -19,7 +19,7 @@ export class UserModel {
   @Column()
   adress: string;
 
-  @Column('int')
+  @Column({ type: "int" })
   telefone: number;
 
   @OneToMany(()=> QueixaModel, (queixa) => queixa.pessoa)
