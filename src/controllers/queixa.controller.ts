@@ -1,8 +1,10 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Get, Post,Delete,Param,Put } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { QueixaModel } from "src/models/queixa.models";
 import { Repository } from "typeorm";
 import { QueixaSchema } from "src/schemas/queixa.schema";
+
+
 
 @Controller('/queixa')
 export class QueixaController{
@@ -22,7 +24,27 @@ export class QueixaController{
         return { data: list };
     }
 
+    @Delete(':id') //Deleter queixa
+    public async delete(
+        @Param('id') id: number,
+    ): Promise<{ data: string}> {
+        const person = await this.model.findOne({where: {id}});
 
+        await this.model.delete(id);
+
+        return { data: `A queixa com ${id} foi deletado do sistema.`};
+    }
+
+    @Put(':id')//Editar entidades
+    public async update(
+        @Param('id') id: number, 
+        @Body() body: QueixaSchema): Promise<{ data: QueixaModel }> {
+      const person = await this.model.findOne({where: { id }} );
+        
+      await this.model.update({id}, body);
+      
+      return { data: await this.model.findOne({where: { id } }) }    
+    }
 
 
 

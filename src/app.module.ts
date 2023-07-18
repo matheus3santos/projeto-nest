@@ -7,6 +7,7 @@ import { QueixaModule } from './modules/queixa.module';
 
 
 
+
 @Module({
   imports: [
 
@@ -16,8 +17,8 @@ import { QueixaModule } from './modules/queixa.module';
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'aluno',
-      password: 'ifpe2023',
+      username: 'matheus',
+      password: '12345',
       database: 'projetoWeb',
       entities: [ UserModel, QueixaModel ],
       synchronize: true,

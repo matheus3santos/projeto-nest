@@ -7,4 +7,5 @@ export class UserSchema {
     email: string;
     adress: string;
     telefone: number;
+    senha: string;
 }

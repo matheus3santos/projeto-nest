@@ -22,8 +22,11 @@ export class UserModel {
   @Column({ type: "int" })
   telefone: number;
 
-  @OneToMany(()=> QueixaModel, (queixa) => queixa.pessoa)
-  queixas: QueixaModel[];
+  @Column()
+  senha: string;
+
+  // @OneToMany(()=> QueixaModel, (queixa) => queixa.pessoa)
+  // queixas: QueixaModel[];
 
 
 

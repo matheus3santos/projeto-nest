@@ -22,7 +22,7 @@ export class QueixaModel {
     @Column()
     description: string;
 
-    @ManyToOne(()=>UserModel, (pessoa) =>pessoa.queixas)
-    pessoa : UserModel;
+    // @ManyToOne(()=>UserModel, (pessoa) =>pessoa.queixas)
+    // pessoa : UserModel;
     
 }
